@@ -9,6 +9,10 @@ import java.time.LocalDate;
 import java.time.format.TextStyle;
 import java.util.Locale;
 
+/**
+ *
+ * @author asty
+ */
 public class DailyFormattedDataModel {
 
     private LocalDate date;
@@ -25,8 +29,11 @@ public class DailyFormattedDataModel {
     /**
      * Creates a WeeklyTimeDataModel object
      * Used to structure data for the corresponding TableView
-     * @param workedHours   String with hours worked
      * @param supposedHours String with supposed work hours
+     * @param d1
+     * @param d2
+     * @param ld
+     * @param string
      */
     public DailyFormattedDataModel(Double workedHours, Double supposedHours, LocalDate date, Double accumulated,
                                    String note) {
@@ -93,6 +100,10 @@ public class DailyFormattedDataModel {
         return this.note.get();
     }
 
+    /**
+     *
+     * @return
+     */
     public double getAccumulatedHours() {
         return accumulatedHours.get();
     }
@@ -105,10 +116,18 @@ public class DailyFormattedDataModel {
         return weekNumber.get();
     }
 
+    /**
+     *
+     * @return
+     */
     public boolean isFiller() {
         return isFiller;
     }
 
+    /**
+     *
+     * @param filler
+     */
     public void setFiller(boolean filler) {
         isFiller = filler;
     }

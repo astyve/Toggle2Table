@@ -20,7 +20,10 @@ import java.io.File;
 import java.util.Optional;
 import java.util.Properties;
 
-
+/**
+ *
+ * @author asty
+ */
 public class LoginController {
 
     @FXML
@@ -52,8 +55,14 @@ public class LoginController {
 
     private FileLogic fileLogic = new FileLogic();
 
+    /**
+     *
+     */
     public LoginController() {}
 
+    /**
+     *
+     */
     public void initialize() {
         bufferImg.setVisible(false);
         this.version.setText("Version: " + AppVersion.getVersion());
@@ -124,6 +133,10 @@ public class LoginController {
         loginCredThread.start();
     }
 
+    /**
+     *
+     * @param e
+     */
     public void buttonPressedListener(KeyEvent e) {
         if(! loginInProgress) {
             if(e.getCode().toString().equals("ENTER")) {

@@ -12,9 +12,17 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Properties;
 
+/**
+ *
+ * @author asty
+ */
 public class FileLogic {
 
-
+    /**
+     *
+     * @param path
+     * @return
+     */
     public Properties loadProps(String path) {
         Properties props = new Properties();
         File file = getFile(path);
@@ -29,6 +37,11 @@ public class FileLogic {
         return props;
     }
 
+    /**
+     *
+     * @param path
+     * @param props
+     */
     public void saveProps(String path, Properties props) {
         File file = getFile(path);
         try {
@@ -53,11 +66,21 @@ public class FileLogic {
         return file;
     }
 
+    /**
+     *
+     * @param path
+     * @return
+     */
     public boolean deleteFile(String path) {
         File file = new File(path);
         return file.delete();
     }
 
+    /**
+     *
+     * @param path
+     * @return
+     */
     public List<WorkHours> loadJson(String path) {
         FileReader reader = null;
         File file = getFile(path);
@@ -82,6 +105,11 @@ public class FileLogic {
         return list == null ? new ArrayList<>() : list;
     }
 
+    /**
+     *
+     * @param path
+     * @param dataset
+     */
     public void saveJson(String path, Collection<?> dataset) {
         File file = new File(path);
         try {

@@ -11,11 +11,18 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.net.URL;
 
+/**
+ *
+ * @author asty
+ */
 public class Main extends Application {
 
     private static Stage primaryStage;
 
-
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         launch(args);
     }
@@ -61,16 +68,27 @@ public class Main extends Application {
         primaryStage.toFront();
     }
 
+    /**
+     *
+     */
     public static void closeLogin() {
         primaryStage.close();
     }
 
+    /**
+     *
+     * @param newStage
+     */
     public static void changePrimaryStage(Stage newStage) {
         primaryStage = newStage;
         initStage(newStage);
         primaryStage.show();
     }
 
+    /**
+     *
+     * @param stage
+     */
     public static void initStage(Stage stage) {
         stage.getScene().getStylesheets().add("styles.css");
         stage.setTitle("Toggl Time Sheet - Login");

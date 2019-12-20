@@ -12,12 +12,22 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Properties;
 
-
-
+/**
+ *
+ * @author asty
+ */
 public class LoginLogic {
 
     private FileLogic fileLogic = new FileLogic();
 
+    /**
+     *
+     * @param username
+     * @param password
+     * @param rememberUsername
+     * @param rememberPassword
+     * @return
+     */
     public boolean attemptAuthentication(String username, String password, boolean rememberUsername, boolean rememberPassword) {
         Session session = Session.getInstance();
         boolean loggedIn = false;
@@ -85,6 +95,9 @@ public class LoginLogic {
         }
     }
 
+    /**
+     *
+     */
     public void browseTogglForgotPW() {
         String url = "https://toggl.com/forgot-password/";
 

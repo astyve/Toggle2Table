@@ -12,24 +12,46 @@ public class DateRange {
     private LocalDate from;
     private LocalDate to;
 
+    /**
+     *
+     * @param from
+     * @param to
+     * @param formatter
+     */
     public DateRange(LocalDate from, LocalDate to, DateTimeFormatter formatter) {
         this.formatter = formatter;
         this.from = from;
         this.to = to;
     }
 
+    /**
+     *
+     * @return
+     */
     public LocalDate getFrom() {
         return from;
     }
 
+    /**
+     *
+     * @return
+     */
     public LocalDate getTo() {
         return to;
     }
 
+    /**
+     *
+     * @param from
+     */
     public void setFrom(LocalDate from) {
         this.from = from;
     }
 
+    /**
+     *
+     * @param to
+     */
     public void setTo(LocalDate to) {
         this.to = to;
     }

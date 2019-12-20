@@ -14,6 +14,13 @@ import java.util.stream.Collectors;
  */
 public class MonthlyFormattedDataListFactory {
 
+    /**
+     *
+     * @param timeEntries
+     * @param month
+     * @param year
+     * @return
+     */
     public List<DailyFormattedDataModel> buildMonthlyDataList(Map<YearWeek, List<DailyFormattedDataModel>> timeEntries,
                                                               Month month, int year) {
         if(timeEntries.size() < 1) {

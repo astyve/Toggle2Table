@@ -37,6 +37,10 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.concurrent.atomic.AtomicBoolean;
 
+/**
+ *
+ * @author asty
+ */
 public class GUIBaseController {
 
     @FXML
@@ -102,7 +106,10 @@ public class GUIBaseController {
 
     private ToggleGroup navButtons = new ToggleGroup();
 
-
+    /**
+     *
+     * @throws IOException
+     */
     @FXML
     public void start() throws IOException {
         Stage appStage = new Stage();
@@ -116,6 +123,9 @@ public class GUIBaseController {
         appStage.show();
     }
 
+    /**
+     *
+     */
     public void initialize() {
         settingsNavBtn.setToggleGroup(navButtons);
         tableNavBtn.setToggleGroup(navButtons);
@@ -189,6 +199,10 @@ public class GUIBaseController {
             icon.setEffect(whiteout);
         });
     }
+
+    /**
+     *
+     */
     public void refreshData() {
         progressBox.setVisible(true);
         spinRefreshBtn(true);
@@ -325,6 +339,10 @@ public class GUIBaseController {
         }
         }
 
+    /**
+     *
+     * @return
+     */
     public static boolean loginStageExists(){
         if(loginStage == null){
             return false;
