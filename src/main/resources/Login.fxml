@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox alignment="CENTER" prefHeight="598.0" prefWidth="853.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UnemployedVoodooFamily.GUI.LoginController">
+<HBox alignment="CENTER" prefHeight="598.0" prefWidth="853.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UnemployedVoodooFamily.GUI.LoginController">
    <children>
       <VBox alignment="CENTER_LEFT" maxWidth="300.0" minHeight="-Infinity" minWidth="300.0" prefHeight="490.0" prefWidth="300.0" spacing="5.0">
          <children>
@@ -44,6 +44,7 @@
                               <Insets top="5.0" />
                            </padding>
                         </Label>
+                        <Label fx:id="version" />
                      </children>
                   </VBox>
                </children>
@@ -51,7 +52,7 @@
                   <Insets bottom="25.0" />
                </padding>
             </HBox>
-            <Label fx:id="wrongCredentials" alignment="CENTER" prefHeight="15.0" prefWidth="272.0" />
+            <Label fx:id="wrongCredentials" alignment="CENTER" prefHeight="15.0" prefWidth="272.0" textAlignment="CENTER" />
             <Label text="Email" />
             <TextField fx:id="emailField" onKeyPressed="#buttonPressedListener" />
             <Label text="Password" />

@@ -5,6 +5,7 @@ import UnemployedVoodooFamily.Logic.FileLogic;
 import UnemployedVoodooFamily.Logic.LoginLogic;
 import UnemployedVoodooFamily.Main;
 import UnemployedVoodooFamily.Logic.Utils.PasswordUtils;
+import UnemployedVoodooFamily.AppVersion;
 import javafx.animation.RotateTransition;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -42,6 +43,8 @@ public class LoginController {
     private HBox logoBox;
     @FXML
     private Hyperlink forgotPasswordLink;
+    @FXML
+    private Label version;
 
     private LoginLogic loginLogic = new LoginLogic();
     private boolean isLoggedIn;
@@ -53,6 +56,7 @@ public class LoginController {
 
     public void initialize() {
         bufferImg.setVisible(false);
+        this.version.setText("Version: " + AppVersion.getVersion());
         setKeyAndClickListeners();
         fillRememberedCredentials();
     }
