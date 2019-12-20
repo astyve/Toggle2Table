@@ -133,7 +133,16 @@ public class RawTimeDataLogic {
             Long pid = timeEntry.getPid();
             Long wid = timeEntry.getWid();
             if(pid != null) {
-                timeEntry.setProject(projects.get(timeEntry.getPid()));
+                Project p = projects.get(timeEntry.getPid());
+                if (null != p) {
+                    System.out.println("Unknown PID in HashMap: pid = " + pid
+                        + " Description: " + timeEntry.getDescription());
+                    // Add a "dummy"-project to the projects-collection
+                    p = new Project();
+                    p.setName("UNKNOWN PROJECT ID = " + pid);
+                    projects.put(pid, p);
+                }                        
+                timeEntry.setProject(p);
             }
             if(wid != null) {
                 timeEntry.setWorkspace(workspaces.get(timeEntry.getWid()));
