@@ -18,6 +18,10 @@ public class WorkHoursModel {
     private SimpleObjectProperty<String> note;
     private WorkHours workHours;
 
+    /**
+     *
+     * @param wh
+     */
     public WorkHoursModel(WorkHours wh) {
         this.workHours = wh;
         this.from = new SimpleObjectProperty<>(wh.getFrom());
@@ -26,38 +30,74 @@ public class WorkHoursModel {
         this.note = new SimpleObjectProperty<>(wh.getNote());
     }
 
+    /**
+     *
+     * @return
+     */
     public LocalDate getFrom() {
         return from.get();
     }
 
+    /**
+     *
+     * @return
+     */
     public SimpleObjectProperty<LocalDate> fromProperty() {
         return from;
     }
 
+    /**
+     *
+     * @return
+     */
     public LocalDate getTo() {
         return to.get();
     }
 
+    /**
+     *
+     * @return
+     */
     public SimpleObjectProperty<LocalDate> toProperty() {
         return to;
     }
 
+    /**
+     *
+     * @return
+     */
     public double getHours() {
         return hours.get();
     }
 
+    /**
+     *
+     * @return
+     */
     public SimpleObjectProperty<Double> hoursProperty() {
         return hours;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getNote() {
         return note.get();
     }
 
+    /**
+     *
+     * @return
+     */
     public SimpleObjectProperty<String> noteProperty() {
         return note;
     }
 
+    /**
+     *
+     * @return
+     */
     public WorkHours getWorkHours() {
         return this.workHours;
     }

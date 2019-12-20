@@ -11,9 +11,17 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Collection;
 
+/**
+ *
+ * @author asty
+ */
 public class Logger {
     private static Logger logger = new Logger();
 
+    /**
+     *
+     * @return
+     */
     public static Logger getInstance() {
         return logger;
     }
@@ -23,6 +31,11 @@ public class Logger {
     private Logger() {
     }
 
+    /**
+     *
+     * @param dataset
+     * @param name
+     */
     public void dumpCollection(Collection<?> dataset, String name) {
         File file = new File(FilePath.LOGS_HOME.getPath() + File.separator + LocalDateTime.now()
                                                                                           .format(formatter) + "." + name + "-dump.json");

@@ -13,6 +13,10 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Properties;
 
+/**
+ *
+ * @author asty
+ */
 public class HelpPromptController {
 
     @FXML
@@ -24,7 +28,9 @@ public class HelpPromptController {
     @FXML
     private Button closeBtn;
 
-
+    /**
+     *
+     */
     public void initialize() {
         versionLink.setText("Version " + getVersion());
         manualLink.setOnAction(event -> browseManual());

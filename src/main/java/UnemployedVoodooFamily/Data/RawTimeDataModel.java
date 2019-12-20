@@ -2,6 +2,10 @@ package UnemployedVoodooFamily.Data;
 
 import javafx.beans.property.SimpleStringProperty;
 
+/**
+ *
+ * @author asty
+ */
 public class RawTimeDataModel {
 
     private SimpleStringProperty project;
@@ -16,13 +20,15 @@ public class RawTimeDataModel {
     /**
      * Creates a RawTimeDataModel object
      * Used to structure data for the corresponding TableView
-     * @param project     String with project name
+     * @param string
+     * @param string1
      * @param description String with description
-     * @param startDate   String with start date
+     * @param string3
      * @param startTime   String with start time
-     * @param endDate     String with end date
-     * @param endTime     String with end time
-     * @param duration    String with duration
+     * @param string4
+     * @param string6
+     * @param string5
+     * @param string7
      */
     public RawTimeDataModel(String project, String client, String description, String startDate, String startTime,
                             String endDate, String endTime, String duration) {
@@ -37,11 +43,18 @@ public class RawTimeDataModel {
         this.duration = new SimpleStringProperty(duration);
     }
 
+    /**
+     *
+     * @return
+     */
     public String getClient() {
         return client.get();
     }
 
-
+    /**
+     *
+     * @return
+     */
     public SimpleStringProperty clientProperty() {
         return client;
     }

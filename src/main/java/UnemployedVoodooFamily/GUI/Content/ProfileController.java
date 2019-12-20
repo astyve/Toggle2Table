@@ -11,6 +11,10 @@ import javafx.scene.control.TextField;
 import java.io.IOException;
 import java.net.URL;
 
+/**
+ *
+ * @author asty
+ */
 public class ProfileController {
 
     @FXML
@@ -42,12 +46,19 @@ public class ProfileController {
 
     private ProfileLogic profile;
 
-
+    /**
+     *
+     * @return
+     * @throws IOException
+     */
     public Node loadFXML() throws IOException {
         URL r = getClass().getClassLoader().getResource("Profile.fxml");
         return FXMLLoader.load(r);
     }
 
+    /**
+     *
+     */
     public void initialize() {
         this.profile = new ProfileLogic();
         nameField.setText(Session.getInstance().getUser().getFullname());

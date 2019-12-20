@@ -5,9 +5,17 @@ import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 
+/**
+ *
+ * @author asty
+ */
 public class ProfileLogic {
 
-
+    /**
+     *
+     * @param weekDay
+     * @return
+     */
     public String getFirstDayOfWeek(long weekDay){
         if(weekDay == 0){
             return "Sunday";
@@ -35,6 +43,11 @@ public class ProfileLogic {
         }
     }
 
+    /**
+     *
+     * @param format
+     * @return
+     */
     public String getTimeFormat(String format){
         if(format.equals("h:mm A")){
             return "12-hour";
@@ -47,6 +60,9 @@ public class ProfileLogic {
         }
     }
 
+    /**
+     *
+     */
     public void browseTogglProfile() {
             String url = "https://toggl.com/app/profile";
 

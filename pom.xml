@@ -17,6 +17,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
@@ -30,20 +31,36 @@
                 <version>1.0-m5.1</version>
                 <configuration>
                     <flowInitContext>
-                         <masterBranchName>master</masterBranchName>
-                         <developBranchName>develop</developBranchName>
-                         <featureBranchPrefix>feature-</featureBranchPrefix>
-                         <releaseBranchPrefix>release-</releaseBranchPrefix>
-                         <hotfixBranchPrefix>hotfix-</hotfixBranchPrefix>
-                         <versionTagPrefix>v</versionTagPrefix>              
+                        <masterBranchName>master</masterBranchName>
+                        <developBranchName>develop</developBranchName>
+                        <featureBranchPrefix>feature-</featureBranchPrefix>
+                        <releaseBranchPrefix>release-</releaseBranchPrefix>
+                        <hotfixBranchPrefix>hotfix-</hotfixBranchPrefix>
+                        <versionTagPrefix>v</versionTagPrefix>              
                     </flowInitContext>
                     <noDeploy>true</noDeploy>
                 </configuration>
             </plugin>
+            
+            <plugin>
+                <!-- Plugin generating a Java source file containg version information version -->
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>templating-maven-plugin</artifactId>
+                <version>1.0.0</version>
+                <executions>
+                    <execution>
+                        <id>generate-verion-class</id>
+                        <goals>
+                            <goal>filter-sources</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>            
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
+                <version>3.2.1</version>
                 <executions>
                     <execution>
                         <goals>
@@ -81,16 +98,19 @@
             <plugin>
                 <groupId>com.akathist.maven.plugins.launch4j</groupId>
                 <artifactId>launch4j-maven-plugin</artifactId>
+                <version>1.7.25</version>
                 <executions>
                     <execution>
                         <phase>package</phase>
-                        <goals><goal>launch4j</goal></goals>
+                        <goals>
+                            <goal>launch4j</goal>
+                        </goals>
                         <configuration>
                             <headerType>gui</headerType>
-                            <outfile>target/TogglTimeSheet-1.0.1.exe</outfile>
+                            <outfile>target/TogglTimeSheet-${project.version}.exe</outfile>
                             <icon>src/main/resources/icons/app_icon/logo.ico</icon>
                             <!-- !!!!!!   Update this when version changes  !!!!!-->
-                            <jar>target/TogglTimeSheet-1.0.1.jar</jar>
+                            <jar>target/TogglTimeSheet-${project.version}.jar</jar>
                             <errTitle>TogglTimeSheet</errTitle>
                             <classPath>
                                 <mainClass>UnemployedVoodooFamily.Main</mainClass>
@@ -134,7 +154,9 @@
                     <execution>
                         <id>assembly</id>
                         <phase>package</phase>
-                        <goals><goal>single</goal></goals>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
                         <configuration>
                             <descriptors>
                                 <descriptor>assembleWinPortable.xml</descriptor>

@@ -10,6 +10,10 @@ import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.stream.Collectors;
 
+/**
+ *
+ * @author asty
+ */
 public class RawTimeDataLogic {
     // and is responsible for handling raw time data
     private static DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MMM-dd");
@@ -23,6 +27,12 @@ public class RawTimeDataLogic {
 
     /**
      * Build an observable list with RawTimeDataModel, using time entries imported from Toggl.
+     * @param <T>
+     * @param timeEntries
+     * @param projects
+     * @param workspaces
+     * @param excludedData
+     * @param clients
      * @return the ObservableList
      */
     public <T> List<RawTimeDataModel> buildRawMasterData(List<TimeEntry> timeEntries, Map<Long, Project> projects,
@@ -150,7 +160,10 @@ public class RawTimeDataLogic {
         }
     }
 
-
+    /**
+     *
+     * @return
+     */
     public LocalDate getFilteredDataStartDate() {
         if(! masterTimeEntries.isEmpty()) {
             return filterStartDate;
@@ -158,6 +171,10 @@ public class RawTimeDataLogic {
         return null;
     }
 
+    /**
+     *
+     * @return
+     */
     public LocalDate getFilteredDataEndDate() {
         if(! masterTimeEntries.isEmpty()) {
             return filterEndDate;
@@ -165,18 +182,34 @@ public class RawTimeDataLogic {
         return null;
     }
 
+    /**
+     *
+     * @param date
+     */
     public void setDataStartDate(LocalDate date) {
         this.filterStartDate = date;
     }
 
+    /**
+     *
+     * @param date
+     */
     public void setDataEndDate(LocalDate date) {
         this.filterEndDate = date;
     }
 
+    /**
+     *
+     * @return
+     */
     public List<TimeEntry> getFilteredTimeEntries() {
         return this.filteredTimeEntries;
     }
 
+    /**
+     *
+     * @return
+     */
     public List<TimeEntry> getMasterTimeEntries() {
         return masterTimeEntries;
     }
