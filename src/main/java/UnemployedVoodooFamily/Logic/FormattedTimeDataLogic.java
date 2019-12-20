@@ -11,6 +11,10 @@ import java.time.temporal.TemporalField;
 import java.time.temporal.WeekFields;
 import java.util.*;
 
+/**
+ *
+ * @author asty
+ */
 public class FormattedTimeDataLogic {
 
     private static Map<YearWeek, List<DailyFormattedDataModel>> weeklyMasterData;
@@ -20,6 +24,9 @@ public class FormattedTimeDataLogic {
     private int selectedWeek;
     private Month selectedMonth;
 
+    /**
+     *
+     */
     public FormattedTimeDataLogic() {
         //Get current year
         selectedYear = LocalDate.now().getYear();
@@ -35,6 +42,14 @@ public class FormattedTimeDataLogic {
 
 
     //Called when the "export to excel" button is pressed
+
+    /**
+     *
+     * @param timeEntries
+     * @param year
+     * @return
+     * @throws IOException
+     */
     public boolean exportToExcelDocument(Map<YearMonth, List<DailyFormattedDataModel>> timeEntries, int year) throws IOException {
         if(timeEntries == null) {
             return false;
@@ -43,6 +58,11 @@ public class FormattedTimeDataLogic {
         return exportHandler.makeExcelDocument();
     }
 
+    /**
+     *
+     * @param yearWeek
+     * @return
+     */
     public List<DailyFormattedDataModel> getWeeklyData(YearWeek yearWeek) {
         if(weeklyMasterData == null) {
             throw new RuntimeException("Weekly master data not yet initalized");
@@ -50,6 +70,11 @@ public class FormattedTimeDataLogic {
         return weeklyMasterData.getOrDefault(yearWeek, Collections.emptyList());
     }
 
+    /**
+     *
+     * @param yearMonth
+     * @return
+     */
     public List<DailyFormattedDataModel> getMonthlyData(YearMonth yearMonth) {
         if(monthlyMasterData == null) {
             throw new RuntimeException("Monthly master data not yet initalized");
@@ -91,38 +116,74 @@ public class FormattedTimeDataLogic {
 
     }
 
+    /**
+     *
+     * @param year
+     */
     public void setSelectedYear(int year) {
         this.selectedYear = year;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getSelectedYear() {
         return this.selectedYear;
     }
 
+    /**
+     *
+     * @param selectedWeek
+     */
     public void setSelectedWeek(int selectedWeek) {
         this.selectedWeek = selectedWeek;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getSelectedWeek() {
         return selectedWeek;
     }
 
+    /**
+     *
+     * @param selectedMonth
+     */
     public void setSelectedMonth(Month selectedMonth) {
         this.selectedMonth = selectedMonth;
     }
 
+    /**
+     *
+     * @return
+     */
     public Month getSelectedMonth() {
         return selectedMonth;
     }
 
+    /**
+     *
+     * @return
+     */
     public Map<YearWeek, List<DailyFormattedDataModel>> getWeeklyMasterData() {
         return weeklyMasterData;
     }
 
+    /**
+     *
+     * @return
+     */
     public Map<YearMonth, List<DailyFormattedDataModel>> getMonthlyMasterData() {
         return monthlyMasterData;
     }
 
+    /**
+     *
+     * @return
+     */
     public static Map<YearMonth, List<DailyFormattedDataModel>> getMonthlyMaterData() {
         return monthlyMasterData;
     }

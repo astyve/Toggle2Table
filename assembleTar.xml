@@ -11,7 +11,7 @@
             <directory>${project.build.directory}</directory>
             <outputDirectory>/</outputDirectory>
             <includes>
-                <include>TogglTimeSheet-1.0.1.jar</include>
+                <include>TogglTimeSheet-${project.version}.jar</include>
             </includes>
         </fileSet>
     </fileSets>

@@ -9,6 +9,10 @@ import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.util.*;
 
+/**
+ *
+ * @author asty
+ */
 public class WeeklyFormattedDataListFactory {
 
     /**

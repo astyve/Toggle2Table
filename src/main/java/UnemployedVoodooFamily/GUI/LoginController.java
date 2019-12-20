@@ -5,6 +5,7 @@ import UnemployedVoodooFamily.Logic.FileLogic;
 import UnemployedVoodooFamily.Logic.LoginLogic;
 import UnemployedVoodooFamily.Main;
 import UnemployedVoodooFamily.Logic.Utils.PasswordUtils;
+import UnemployedVoodooFamily.AppVersion;
 import javafx.animation.RotateTransition;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -19,7 +20,10 @@ import java.io.File;
 import java.util.Optional;
 import java.util.Properties;
 
-
+/**
+ *
+ * @author asty
+ */
 public class LoginController {
 
     @FXML
@@ -42,6 +46,8 @@ public class LoginController {
     private HBox logoBox;
     @FXML
     private Hyperlink forgotPasswordLink;
+    @FXML
+    private Label version;
 
     private LoginLogic loginLogic = new LoginLogic();
     private boolean isLoggedIn;
@@ -49,10 +55,17 @@ public class LoginController {
 
     private FileLogic fileLogic = new FileLogic();
 
+    /**
+     *
+     */
     public LoginController() {}
 
+    /**
+     *
+     */
     public void initialize() {
         bufferImg.setVisible(false);
+        this.version.setText("Version: " + AppVersion.getVersion());
         setKeyAndClickListeners();
         fillRememberedCredentials();
     }
@@ -120,6 +133,10 @@ public class LoginController {
         loginCredThread.start();
     }
 
+    /**
+     *
+     * @param e
+     */
     public void buttonPressedListener(KeyEvent e) {
         if(! loginInProgress) {
             if(e.getCode().toString().equals("ENTER")) {

@@ -8,6 +8,10 @@ import ch.simas.jtoggl.*;
 import java.time.*;
 import java.util.*;
 
+/**
+ *
+ * @author asty
+ */
 public class Session {
 
     private static JToggl jToggl = null;
@@ -33,10 +37,18 @@ public class Session {
         this.propsLogic = new FileLogic();
     }
 
+    /**
+     *
+     * @return
+     */
     synchronized public static Session getInstance() {
         return togglSession;
     }
 
+    /**
+     *
+     * @param newSession
+     */
     public void setSession(JToggl newSession) {
         if(jToggl == null) {
             jToggl = newSession;
@@ -50,16 +62,27 @@ public class Session {
         }
     }
 
+    /**
+     *
+     * @param listener
+     */
     public void addListener(DataLoadListener listener) {
         loadListeners.add(listener);
     }
 
+    /**
+     *
+     * @param e
+     */
     public void notifyDataLoaded(Data e) {
         for(DataLoadListener l: loadListeners) {
             l.dataLoaded(e);
         }
     }
 
+    /**
+     *
+     */
     public static void terminateSession() {
         user = null;
         projects = null;
@@ -70,30 +93,58 @@ public class Session {
         jToggl = null;
     }
 
+    /**
+     *
+     * @return
+     */
     public List<TimeEntry> getTimeEntries() {
         return timeEntries;
     }
 
+    /**
+     *
+     * @return
+     */
     public HashMap<Long, Project> getProjects() {
         return projects;
     }
 
+    /**
+     *
+     * @return
+     */
     public LinkedHashMap<Long, Workspace> getWorkspaces() {
         return workspaces;
     }
 
+    /**
+     *
+     * @return
+     */
     public HashMap<Long, Task> getTasks() {
         return tasks;
     }
 
+    /**
+     *
+     * @return
+     */
     public HashMap<Long, Client> getClients() {
         return clients;
     }
 
+    /**
+     *
+     * @return
+     */
     public User getUser() {
         return user;
     }
 
+    /**
+     *
+     * @return
+     */
     public ZoneOffset getZoneOffset() {
         return zoneOffset;
     }
@@ -101,8 +152,6 @@ public class Session {
 
     /**
      * Fetch all the time-entries from the given period
-     * @param start the start date to fetch from
-     * @param end   the end date to fetch from
      */
     public void refreshTimeEntries() {
         // fetch time entries
@@ -124,7 +173,7 @@ public class Session {
             if(fetchedEntries.size() > 999) {
 
                 // fetch from new start date
-                OffsetDateTime newStart = timeEntries.get(fetchedEntries.size() - 1).getStart();
+                OffsetDateTime newStart = timeEntries.get(timeEntries.size() - 1).getStart();
                 fetchedEntries = jToggl.getTimeEntries(newStart, end);
 
                 //remove eventual duplicate time entry
@@ -141,40 +190,62 @@ public class Session {
         }
     }
 
+    /**
+     *
+     */
     public void refreshUser() {
         this.user = jToggl.getCurrentUser();
         this.notifyDataLoaded(Data.USER);
     }
 
+    /**
+     *
+     */
     public void refreshClient() {
         this.clients = jToggl.getClients();
         this.notifyDataLoaded(Data.CLIENT);
     }
 
+    /**
+     *
+     */
     public void refreshProjects() {
         this.projects = jToggl.getProjects();
         this.notifyDataLoaded(Data.PROJECTS);
 
     }
 
+    /**
+     *
+     */
     public void refreshWorkspaces() {
         this.workspaces = jToggl.getWorkspaces();
         this.notifyDataLoaded(Data.WORKSPACES);
 
     }
 
+    /**
+     *
+     */
     public void refreshTasks() {
         this.tasks = jToggl.getTasks();
         this.notifyDataLoaded(Data.TASKS);
 
     }
 
+    /**
+     *
+     */
     public void refreshWorkHours() {
         this.workHours = propsLogic.loadProps(FilePath.getCurrentUserWorkhours());
         this.notifyDataLoaded(Data.WORKHOURS);
 
     }
 
+    /**
+     *
+     * @return
+     */
     public Properties getWorkHours() {
         refreshWorkHours();
         return workHours;

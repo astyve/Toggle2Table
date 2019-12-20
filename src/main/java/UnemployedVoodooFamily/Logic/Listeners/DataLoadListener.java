@@ -7,5 +7,10 @@ import UnemployedVoodooFamily.Data.Enums.Data;
  * Uses the Data enum to specify which piece of data was loaded.
  */
 public interface DataLoadListener {
+
+    /**
+     *
+     * @param d
+     */
     void dataLoaded(Data d);
 }

@@ -53,6 +53,11 @@ import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+/**
+ *
+ * @author asty
+ * @param <Content>
+ */
 public class TableViewController<Content extends Pane> implements DataLoadListener {
 
     @FXML
@@ -152,8 +157,11 @@ public class TableViewController<Content extends Pane> implements DataLoadListen
 
     private static DecimalFormat df = new DecimalFormat("#0.00");
 
-
-
+    /**
+     *
+     * @return
+     * @throws IOException
+     */
     public Node loadFXML() throws IOException {
         URL r = getClass().getClassLoader().getResource("Table.fxml");
         return FXMLLoader.load(r);
@@ -164,6 +172,10 @@ public class TableViewController<Content extends Pane> implements DataLoadListen
     // |##################################################|
     // |                GENERAL METHODS                   |
     // |##################################################|
+
+    /**
+     *
+     */
 
     public void initialize() {
         Session.getInstance().addListener(this);

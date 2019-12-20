@@ -13,6 +13,11 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.time.Month;
 import java.util.*;
+
+/**
+ *
+ * @author asty
+ */
 public class ExcelWriter {
 
     private Workbook workbook;
@@ -25,12 +30,22 @@ public class ExcelWriter {
     private static String[] summaryColumnNames = {"", "Worked hours", "Net hours", "Accumulated hours", "Notes"};
     private Map<Month, Integer> summaryRowNumbers;
 
+    /**
+     *
+     */
     public ExcelWriter() {
         this.workbook = new XSSFWorkbook();
         setupStandardRowFormatting();
         summaryRowNumbers = new HashMap<>();
     }
 
+    /**
+     *
+     * @param monthLists
+     * @param year
+     * @return
+     * @throws IOException
+     */
     public boolean generateExcelSheet(HashMap<String, List> monthLists, int year) throws IOException {
         boolean success = false;
         buildWorkbook(monthLists, year);

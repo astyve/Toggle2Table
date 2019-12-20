@@ -22,6 +22,10 @@ import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 
+/**
+ *
+ * @author asty
+ */
 public class SettingsController {
 
     @FXML
@@ -80,6 +84,9 @@ public class SettingsController {
         return FXMLLoader.load(r);
     }
 
+    /**
+     *
+     */
     public void initialize() {
         this.logic = new SettingsLogic(FilePath.getCurrentUserWorkhours());
         this.workHoursViewRoot.setVisible(false);

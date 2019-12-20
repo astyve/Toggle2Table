@@ -20,6 +20,10 @@ public class SettingsLogic {
     private String path;
     private List<WorkHours> workHours;
 
+    /**
+     *
+     * @param path
+     */
     public SettingsLogic(String path) {
         this.workHours = propsLogic.loadJson(path);
         this.path = path;
@@ -30,6 +34,7 @@ public class SettingsLogic {
      * @param fromDate the start of the period
      * @param toDate   the end of the period
      * @param hoursStr the standard work hours for this period
+     * @param note
      */
     public void setWorkHours(LocalDate fromDate, LocalDate toDate, String hoursStr, String note) {
 
@@ -40,6 +45,10 @@ public class SettingsLogic {
         propsLogic.saveJson(path, workHours);
     }
 
+    /**
+     *
+     * @return
+     */
     public List<WorkHours> getWorkHours() {
         return this.workHours;
     }
@@ -134,6 +143,10 @@ public class SettingsLogic {
         }
     }
 
+    /**
+     *
+     * @param table
+     */
     public void populateHoursTable(TableView table) {
         //load props file
         List<WorkHours> whList = propsLogic.loadJson(path);
@@ -163,6 +176,7 @@ public class SettingsLogic {
      * This method's main function is to delete files in a specific directory,
      * files including files in subdirectories will also be deleted, disregarding it's extension.
      * @param path is the directory path from where all files will be removed.
+     * @throws java.lang.Exception
      */
     public void deleteStoredData(String path) throws Exception{
         File directory = new File(path);
@@ -178,6 +192,11 @@ public class SettingsLogic {
 
     }
 
+    /**
+     *
+     * @param <T>
+     * @param workhours
+     */
     public <T> void deleteWorkHours(T workhours) {
         if(workhours instanceof WorkHoursModel) {
             this.workHours = propsLogic.loadJson(path);
