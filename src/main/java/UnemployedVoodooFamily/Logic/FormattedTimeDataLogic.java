@@ -50,11 +50,11 @@ public class FormattedTimeDataLogic {
      * @return
      * @throws IOException
      */
-    public boolean exportToExcelDocument(Map<YearMonth, List<DailyFormattedDataModel>> timeEntries, int year) throws IOException {
+    public boolean exportToExcelDocument(Map<YearMonth, List<DailyFormattedDataModel>> timeEntries, int year, String file) throws IOException {
         if(timeEntries == null) {
             return false;
         }
-        ExcelExportHandler exportHandler = new ExcelExportHandler(timeEntries, year);
+        ExcelExportHandler exportHandler = new ExcelExportHandler(timeEntries, year, file);
         return exportHandler.makeExcelDocument();
     }
 

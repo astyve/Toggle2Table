@@ -2,6 +2,7 @@ package UnemployedVoodooFamily.Logic;
 
 import UnemployedVoodooFamily.Data.DailyFormattedDataModel;
 import UnemployedVoodooFamily.Data.Enums.FilePath;
+import java.io.File;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.ss.util.CellReference;
@@ -46,14 +47,14 @@ public class ExcelWriter {
      * @return
      * @throws IOException
      */
-    public boolean generateExcelSheet(HashMap<String, List> monthLists, int year) throws IOException {
+    public boolean generateExcelSheet(HashMap<String, List> monthLists, int year, String file) throws IOException {
         boolean success = false;
-        buildWorkbook(monthLists, year);
+        buildWorkbook(monthLists, year, file);
         success = true;
         return success; //Return true if document was build correctly, false if failed
     }
 
-    private void buildWorkbook(HashMap<String, List> monthLists, int year) throws IOException {
+    private void buildWorkbook(HashMap<String, List> monthLists, int year, String file) throws IOException {
         //Create monthly sheets
         for(String key: monthLists.keySet()) {
             constructMonthlySheet(key, monthLists.get(key));
@@ -74,7 +75,8 @@ public class ExcelWriter {
         //Set other default settings and write to file
         workbook.setActiveSheet(0);
         workbook.setSelectedTab(0);
-        FileOutputStream fileOut = new FileOutputStream(FilePath.APP_HOME.getPath() +"\\Time Report " + year + ".xlsx");
+        //FileOutputStream fileOut = new FileOutputStream(FilePath.APP_HOME.getPath() + File.separator + "Time Report " + year + ".xlsx");
+        FileOutputStream fileOut = new FileOutputStream(file);
         workbook.write(fileOut);
         fileOut.close();
         workbook.close();
