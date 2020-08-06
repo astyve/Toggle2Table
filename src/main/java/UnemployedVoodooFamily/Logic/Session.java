@@ -35,6 +35,7 @@ public class Session {
 
     private Session() {
         this.propsLogic = new FileLogic();
+        this.timeEntries = new ArrayList<TimeEntry>();
     }
 
     /**
@@ -163,7 +164,8 @@ public class Session {
         OffsetDateTime start = OffsetDateTime.of(2007, 1, 1, 0, 0, 0, 0, zoneOffset);
         OffsetDateTime end = OffsetDateTime.of(LocalDate.now().getYear(), 12, 31, 0, 0, 0, 0, zoneOffset);
         List<TimeEntry> fetchedEntries = jToggl.getTimeEntries(start, end);
-        this.timeEntries = fetchedEntries;
+//        this.timeEntries = fetchedEntries;
+        this.timeEntries.addAll(fetchedEntries);
 
         // if the fetched time-entries size is over Toggl's limit of 1000
         // time entries per request, this will keep fetching until we have

@@ -50,8 +50,11 @@ import java.time.YearMonth;
 import java.time.format.TextStyle;
 import java.util.List;
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+import javafx.stage.FileChooser;
 
 /**
  *
@@ -446,19 +449,33 @@ public class TableViewController<Content extends Pane> implements DataLoadListen
     private void initExcelExportBtn() {
         exportBtn.setOnAction(event -> {
             //try to create excel file, and initialize user feedback
+            String year = yearSpinner.getEditor().getText();
+                
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.setInitialDirectory(new File(FilePath.APP_HOME.getPath()));
+            fileChooser.setInitialFileName("Time Report " + year + ".xlsx");
+            File file = fileChooser.showSaveDialog(null);
+
             Thread t = new Thread(() -> {
                 exportBtn.setDisable(true);
                 exportProgressIndicator.setVisible(true);
+                
 
                 try {
                     //create document
                     boolean success = formattedTimeDataLogic.exportToExcelDocument(formattedTimeDataLogic.getMonthlyMasterData(),
-                                                                 Integer.parseInt(yearSpinner.getEditor().getText()));
+                                                                 Integer.parseInt(year), file.getAbsolutePath());
 
                     //show success in ui
                     Platform.runLater(() -> {
                         if(success) {
                             showSuccessLabel(excelFeedbackLabel, "Excel document was successfully created");
+                            try {
+                                Desktop.getDesktop().open(new File(FilePath.APP_HOME.getPath()));
+                            } catch (IOException ex) {
+                                Logger.getLogger(TableViewController.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+
                         }
                         else {
                             showErrorLabel(excelFeedbackLabel, "Cannot create Excel document while time entries are still downloading");

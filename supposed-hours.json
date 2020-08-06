@@ -1,0 +1,436 @@
+[
+  {
+    "from": {
+      "year": 2019,
+      "month": 1,
+      "day": 1
+    },
+    "to": {
+      "year": 2019,
+      "month": 4,
+      "day": 17
+    },
+    "hours": 7.45,
+    "note": "Vintertid"
+  },
+  {
+    "from": {
+      "year": 2019,
+      "month": 4,
+      "day": 23
+    },
+    "to": {
+      "year": 2019,
+      "month": 4,
+      "day": 30
+    },
+    "hours": 7.45,
+    "note": "Vintertid"
+  },
+  {
+    "from": {
+      "year": 2019,
+      "month": 8,
+      "day": 5
+    },
+    "to": {
+      "year": 2019,
+      "month": 8,
+      "day": 31
+    },
+    "hours": 7.0,
+    "note": ""
+  },
+  {
+    "from": {
+      "year": 2019,
+      "month": 9,
+      "day": 1
+    },
+    "to": {
+      "year": 2019,
+      "month": 12,
+      "day": 31
+    },
+    "hours": 7.45,
+    "note": "Vintertid"
+  },
+  {
+    "from": {
+      "year": 2019,
+      "month": 7,
+      "day": 1
+    },
+    "to": {
+      "year": 2019,
+      "month": 8,
+      "day": 4
+    },
+    "hours": 0.0,
+    "note": "Sommerferie"
+  },
+  {
+    "from": {
+      "year": 2019,
+      "month": 5,
+      "day": 2
+    },
+    "to": {
+      "year": 2019,
+      "month": 5,
+      "day": 16
+    },
+    "hours": 7.0,
+    "note": "Sommertid"
+  },
+  {
+    "from": {
+      "year": 2019,
+      "month": 5,
+      "day": 18
+    },
+    "to": {
+      "year": 2019,
+      "month": 5,
+      "day": 29
+    },
+    "hours": 7.0,
+    "note": "Sommertid"
+  },
+  {
+    "from": {
+      "year": 2019,
+      "month": 5,
+      "day": 31
+    },
+    "to": {
+      "year": 2019,
+      "month": 6,
+      "day": 9
+    },
+    "hours": 7.0,
+    "note": "Sommertid"
+  },
+  {
+    "from": {
+      "year": 2019,
+      "month": 6,
+      "day": 11
+    },
+    "to": {
+      "year": 2019,
+      "month": 6,
+      "day": 30
+    },
+    "hours": 7.0,
+    "note": "Sommertid"
+  },
+  {
+    "from": {
+      "year": 2019,
+      "month": 4,
+      "day": 18
+    },
+    "to": {
+      "year": 2019,
+      "month": 4,
+      "day": 22
+    },
+    "hours": 0.0,
+    "note": "Påskefeire"
+  },
+  {
+    "from": {
+      "year": 2019,
+      "month": 5,
+      "day": 17
+    },
+    "to": {
+      "year": 2019,
+      "month": 5,
+      "day": 17
+    },
+    "hours": 0.0,
+    "note": "17. mai"
+  },
+  {
+    "from": {
+      "year": 2020,
+      "month": 1,
+      "day": 1
+    },
+    "to": {
+      "year": 2020,
+      "month": 1,
+      "day": 1
+    },
+    "hours": 0.0,
+    "note": "1. nyttårsdag"
+  },
+  {
+    "from": {
+      "year": 2020,
+      "month": 1,
+      "day": 2
+    },
+    "to": {
+      "year": 2020,
+      "month": 4,
+      "day": 8
+    },
+    "hours": 7.45,
+    "note": "Vintertid"
+  },
+  {
+    "from": {
+      "year": 2020,
+      "month": 4,
+      "day": 9
+    },
+    "to": {
+      "year": 2020,
+      "month": 4,
+      "day": 13
+    },
+    "hours": 0.0,
+    "note": "Påske"
+  },
+  {
+    "from": {
+      "year": 2020,
+      "month": 4,
+      "day": 14
+    },
+    "to": {
+      "year": 2020,
+      "month": 4,
+      "day": 30
+    },
+    "hours": 7.45,
+    "note": "Vintertid"
+  },
+  {
+    "from": {
+      "year": 2020,
+      "month": 5,
+      "day": 1
+    },
+    "to": {
+      "year": 2020,
+      "month": 5,
+      "day": 1
+    },
+    "hours": 0.0,
+    "note": "1. mai"
+  },
+  {
+    "from": {
+      "year": 2020,
+      "month": 5,
+      "day": 2
+    },
+    "to": {
+      "year": 2020,
+      "month": 5,
+      "day": 7
+    },
+    "hours": 7.0,
+    "note": "Sommertid"
+  },
+  {
+    "from": {
+      "year": 2020,
+      "month": 5,
+      "day": 8
+    },
+    "to": {
+      "year": 2020,
+      "month": 5,
+      "day": 8
+    },
+    "hours": 0.0,
+    "note": "8. mai"
+  },
+  {
+    "from": {
+      "year": 2020,
+      "month": 5,
+      "day": 9
+    },
+    "to": {
+      "year": 2020,
+      "month": 5,
+      "day": 16
+    },
+    "hours": 7.0,
+    "note": "Sommertid"
+  },
+  {
+    "from": {
+      "year": 2020,
+      "month": 5,
+      "day": 17
+    },
+    "to": {
+      "year": 2020,
+      "month": 5,
+      "day": 17
+    },
+    "hours": 0.0,
+    "note": "17. mai"
+  },
+  {
+    "from": {
+      "year": 2020,
+      "month": 5,
+      "day": 18
+    },
+    "to": {
+      "year": 2020,
+      "month": 5,
+      "day": 20
+    },
+    "hours": 7.0,
+    "note": "Sommertid"
+  },
+  {
+    "from": {
+      "year": 2020,
+      "month": 5,
+      "day": 21
+    },
+    "to": {
+      "year": 2020,
+      "month": 5,
+      "day": 21
+    },
+    "hours": 0.0,
+    "note": "Kristi himmelfart"
+  },
+  {
+    "from": {
+      "year": 2020,
+      "month": 5,
+      "day": 22
+    },
+    "to": {
+      "year": 2020,
+      "month": 5,
+      "day": 29
+    },
+    "hours": 7.0,
+    "note": "Sommertid"
+  },
+  {
+    "from": {
+      "year": 2020,
+      "month": 5,
+      "day": 30
+    },
+    "to": {
+      "year": 2020,
+      "month": 6,
+      "day": 1
+    },
+    "hours": 0.0,
+    "note": "Pinse"
+  },
+  {
+    "from": {
+      "year": 2020,
+      "month": 6,
+      "day": 2
+    },
+    "to": {
+      "year": 2020,
+      "month": 6,
+      "day": 22
+    },
+    "hours": 7.0,
+    "note": "Sommertid"
+  },
+  {
+    "from": {
+      "year": 2020,
+      "month": 6,
+      "day": 23
+    },
+    "to": {
+      "year": 2020,
+      "month": 8,
+      "day": 4
+    },
+    "hours": 0.0,
+    "note": "Sommerferie"
+  },
+  {
+    "from": {
+      "year": 2020,
+      "month": 8,
+      "day": 5
+    },
+    "to": {
+      "year": 2020,
+      "month": 8,
+      "day": 31
+    },
+    "hours": 7.0,
+    "note": "Sommertid"
+  },
+  {
+    "from": {
+      "year": 2020,
+      "month": 9,
+      "day": 1
+    },
+    "to": {
+      "year": 2020,
+      "month": 12,
+      "day": 23
+    },
+    "hours": 7.45,
+    "note": "Vintertid"
+  },
+  {
+    "from": {
+      "year": 2020,
+      "month": 12,
+      "day": 24
+    },
+    "to": {
+      "year": 2020,
+      "month": 12,
+      "day": 26
+    },
+    "hours": 0.0,
+    "note": "Juleferie"
+  },
+  {
+    "from": {
+      "year": 2020,
+      "month": 12,
+      "day": 27
+    },
+    "to": {
+      "year": 2020,
+      "month": 12,
+      "day": 30
+    },
+    "hours": 7.45,
+    "note": "Vintertid"
+  },
+  {
+    "from": {
+      "year": 2020,
+      "month": 12,
+      "day": 31
+    },
+    "to": {
+      "year": 2020,
+      "month": 12,
+      "day": 31
+    },
+    "hours": 0.0,
+    "note": "Nyttårsaften"
+  }
+]

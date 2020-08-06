@@ -144,7 +144,7 @@ public class RawTimeDataLogic {
             Long wid = timeEntry.getWid();
             if(pid != null) {
                 Project p = projects.get(timeEntry.getPid());
-                if (null != p) {
+                if (null == p) {
                     System.out.println("Unknown PID in HashMap: pid = " + pid
                         + " Description: " + timeEntry.getDescription());
                     // Add a "dummy"-project to the projects-collection

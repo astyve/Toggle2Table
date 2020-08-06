@@ -21,15 +21,17 @@ public class ExcelExportHandler {
     private ExcelWriter excelWriter;
     private HashMap<String, List> monthlyDataLists;
     private int year;
+    private String file;
 
     /**
      *
      * @param timeEntries
      * @param year
      */
-    public ExcelExportHandler(Map<YearMonth, List<DailyFormattedDataModel>> timeEntries, int year) {
+    public ExcelExportHandler(Map<YearMonth, List<DailyFormattedDataModel>> timeEntries, int year, String file) {
         excelWriter = new ExcelWriter();
         this.year = year;
+        this.file = file;
         monthlyDataLists = new HashMap<>();
         if(null != timeEntries) {
             for(Month month: Month.values()) {
@@ -45,7 +47,7 @@ public class ExcelExportHandler {
      * @throws IOException
      */
     public boolean makeExcelDocument() throws IOException {
-        boolean exportSuccess = excelWriter.generateExcelSheet(monthlyDataLists, year);
+        boolean exportSuccess = excelWriter.generateExcelSheet(this.monthlyDataLists, this.year, this.file);
         if(exportSuccess)   {
         }
         return exportSuccess;
